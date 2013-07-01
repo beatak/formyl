@@ -1,0 +1,207 @@
+@font-face {
+  font-family: 'formyl_symbolsregular';
+  src: url('formylsymbols-regular.eot');
+}
+
+@font-face {
+  font-family: 'formyl_symbolsregular';
+  src: url(data:application/x-font-woff;charset=utf-8;base64,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) format('woff'),
+    url('formylsymbols-regular.ttf') format('truetype'),
+    url('formylsymbols-regular.svg#formyl_symbolsregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "compass/css3/box-shadow";
+@import "compass/css3/opacity";
+
+$spacing: 8px;
+$font_size: 16px;
+$foreground_color: #000;
+$background_color: #FFF;
+$border_color: #bbb;
+$shadow_color: rgba(0, 0, 0, 0.1);
+$accent_color: #F00;
+$typeface: 'formyl_symbolsregular';
+
+
+
+.oneform-input-wrap {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: $spacing;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $border_color;
+  @include single-box-shadow( $shadow_color, 0px, 1px, 2px, false, true );
+  background-color: $background_color;
+
+  &:hover {
+    @include box-shadow( $shadow_color 0 0 0 2px, $shadow_color 0 0 2px 0 inset );
+  }
+  &.on-focus {
+    @include box-shadow( $shadow_color 0 0 0 2px, $shadow_color 0 0 2px 0 inset );
+  }
+}
+
+.oneform-input {
+  display: block;
+  border-style: none;
+  background-color: transparent;
+  outline: 0 none;
+  font-size: $font_size;
+  color: $foreground_color;
+  width: 100%;
+  resize: none;
+  line-height: 1.33;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: $font_size;
+}
+
+.oneform-select-wrap {
+  height: $font_size + ($spacing * 2);
+}
+
+.oneform-select {
+  background: none;
+  border-style: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  @include opacity( 0 );
+}
+
+.oneform-select-text {
+  color: $foreground_color;
+  display: block;
+  font-size: $font_size;
+  line-height: 1.33;
+  padding: 0 0 0 1px;
+  cursor: pointer;
+  // background-image: image-url("phoenix/default/landing/arrow_down.png");
+  // background-repeat: no-repeat;
+  // background-position: right center;
+}
+
+.oneform-textarea-wrap {
+  padding: 0;
+}
+
+.oneform-textarea {
+  display: block;
+  border-style: none;
+  background-color: transparent;
+  outline: 0 none;
+  font-size: $font_size;
+  color: $foreground_color;
+  width: 100%;
+  resize: none;
+  line-height: 1.33;
+  padding: $spacing;
+  margin: 0;
+}
+
+.oneform-checkbox-display {
+  display: inline-block;
+  width: $font_size;
+  height: $font_size;
+  font-size: $font_size;
+  position: relative;
+  vertical-align: middle;
+  font-family: $typeface;
+
+  &:after {
+    content: '\2610';
+  }
+
+  &.checked {
+    &:before {
+      content: '\2713';
+      color: $accent_color;
+      position: absolute;
+    }
+  }
+}
+
+.oneform-checkbox {
+  display: none;
+}
+
+.oneform-radio-display {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  vertical-align: middle;
+  background-color: $background_color;
+
+  cursor: pointer;
+  font-size: 16px;
+
+  font-family: $typeface;
+  &:after {
+    content: '\25ef';
+  }
+
+  // @include border-radius( 7px );
+
+  &.checked {
+    &:before {
+      // this needs work
+      content: '\25cf';
+      color: $accent_color;
+      position: absolute;
+    }
+  }
+}
+
+.oneform-radio {
+  display: none;
+}
+
+/*
+
+.oneform-variable-input {
+  padding-right: 20px;
+}
+
+.oneform-bigbutton {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  font-size: $font_base;
+  padding: $spacing;
+  background-color: $background_color;
+  color: $fore;
+  border-width: 0;
+  cursor: pointer;
+  text-align: center;
+
+  > input {
+    cursor: pointer;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 100%;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: $base_font_size;
+    text-transform: uppercase;
+    background-color: transparent;
+
+    background-image: image-url('phoenix/default/landing/arrow_right.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    border: none;
+  }
+
+  &.green {
+    background-color: $green;
+  }
+}
+
+*/
