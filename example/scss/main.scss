@@ -1,3 +1,11 @@
+body {
+  background-color: #999;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
 @font-face {
   font-family: 'formyl_symbolsregular';
   src: url('formylsymbols-regular.eot');
@@ -106,14 +114,23 @@ $typeface: 'formyl_symbolsregular';
   margin: 0;
 }
 
+.oneform-checkbox {
+  display: none;
+}
+
+.oneform-radio {
+  display: none;
+}
+
 .oneform-checkbox-display {
+  position: relative;
   display: inline-block;
   width: $font_size;
   height: $font_size;
   font-size: $font_size;
-  position: relative;
-  vertical-align: middle;
   font-family: $typeface;
+
+  vertical-align: middle;
 
   &:after {
     content: '\2610';
@@ -128,22 +145,21 @@ $typeface: 'formyl_symbolsregular';
   }
 }
 
-.oneform-checkbox {
-  display: none;
-}
-
 .oneform-radio-display {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
   position: relative;
+  display: inline-block;
+  width: $font_size;
+  height: $font_size;
+  font-size: $font_size;
+  font-family: $typeface;
+
   vertical-align: middle;
   background-color: $background_color;
 
   cursor: pointer;
-  font-size: 16px;
+  
 
-  font-family: $typeface;
+  
   &:after {
     content: '\25ef';
   }
@@ -160,9 +176,7 @@ $typeface: 'formyl_symbolsregular';
   }
 }
 
-.oneform-radio {
-  display: none;
-}
+
 
 /*
 

@@ -1,3 +1,13 @@
+/* line 1, ../scss/main.scss */
+body {
+  background-color: #999;
+}
+
+/* line 5, ../scss/main.scss */
+li {
+  margin-bottom: 5px;
+}
+
 @font-face {
   font-family: 'formyl_symbolsregular';
   src: url("formylsymbols-regular.eot");
@@ -10,7 +20,7 @@
   font-style: normal;
 }
 
-/* line 29, ../scss/main.scss */
+/* line 37, ../scss/main.scss */
 .oneform-input-wrap {
   position: relative;
   display: block;
@@ -24,20 +34,20 @@
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
   background-color: white;
 }
-/* line 40, ../scss/main.scss */
+/* line 48, ../scss/main.scss */
 .oneform-input-wrap:hover {
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
 }
-/* line 43, ../scss/main.scss */
+/* line 51, ../scss/main.scss */
 .oneform-input-wrap.on-focus {
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
 }
 
-/* line 48, ../scss/main.scss */
+/* line 56, ../scss/main.scss */
 .oneform-input {
   display: block;
   border-style: none;
@@ -53,12 +63,12 @@
   height: 16px;
 }
 
-/* line 63, ../scss/main.scss */
+/* line 71, ../scss/main.scss */
 .oneform-select-wrap {
   height: 32px;
 }
 
-/* line 67, ../scss/main.scss */
+/* line 75, ../scss/main.scss */
 .oneform-select {
   background: none;
   border-style: none;
@@ -72,7 +82,7 @@
   opacity: 0;
 }
 
-/* line 79, ../scss/main.scss */
+/* line 87, ../scss/main.scss */
 .oneform-select-text {
   color: black;
   display: block;
@@ -82,12 +92,12 @@
   cursor: pointer;
 }
 
-/* line 91, ../scss/main.scss */
+/* line 99, ../scss/main.scss */
 .oneform-textarea-wrap {
   padding: 0;
 }
 
-/* line 95, ../scss/main.scss */
+/* line 103, ../scss/main.scss */
 .oneform-textarea {
   display: block;
   border-style: none;
@@ -102,58 +112,58 @@
   margin: 0;
 }
 
-/* line 109, ../scss/main.scss */
+/* line 117, ../scss/main.scss */
+.oneform-checkbox {
+  display: none;
+}
+
+/* line 121, ../scss/main.scss */
+.oneform-radio {
+  display: none;
+}
+
+/* line 125, ../scss/main.scss */
 .oneform-checkbox-display {
+  position: relative;
   display: inline-block;
   width: 16px;
   height: 16px;
   font-size: 16px;
-  position: relative;
-  vertical-align: middle;
   font-family: "formyl_symbolsregular";
+  vertical-align: middle;
 }
-/* line 118, ../scss/main.scss */
+/* line 135, ../scss/main.scss */
 .oneform-checkbox-display:after {
   content: '\2610';
 }
-/* line 123, ../scss/main.scss */
+/* line 140, ../scss/main.scss */
 .oneform-checkbox-display.checked:before {
   content: '\2713';
   color: red;
   position: absolute;
 }
 
-/* line 131, ../scss/main.scss */
-.oneform-checkbox {
-  display: none;
-}
-
-/* line 135, ../scss/main.scss */
+/* line 148, ../scss/main.scss */
 .oneform-radio-display {
+  position: relative;
   display: inline-block;
   width: 16px;
   height: 16px;
-  position: relative;
+  font-size: 16px;
+  font-family: "formyl_symbolsregular";
   vertical-align: middle;
   background-color: white;
   cursor: pointer;
-  font-size: 16px;
-  font-family: "formyl_symbolsregular";
 }
-/* line 147, ../scss/main.scss */
+/* line 163, ../scss/main.scss */
 .oneform-radio-display:after {
   content: '\25ef';
 }
-/* line 154, ../scss/main.scss */
+/* line 170, ../scss/main.scss */
 .oneform-radio-display.checked:before {
   content: '\25cf';
   color: red;
   position: absolute;
-}
-
-/* line 163, ../scss/main.scss */
-.oneform-radio {
-  display: none;
 }
 
 /*
