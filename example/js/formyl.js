@@ -72,6 +72,7 @@ window.formyl = (function () {
       Oneform._setBrothers(this);
       Oneform._updateCheckedState(
         this.el,
+        this.selector.CHECKER_WRAP,
         this.selector.RADIO_DISPLAY,
         $el.is(':checked')
       ); 
@@ -103,7 +104,7 @@ window.formyl = (function () {
   };
 
   Oneform.prototype.onSelectChange = function (ev) {
-    console.log( 'onSelectChange' );
+    // console.log( 'onSelectChange' );
     this.renderSelectDisplay();
   };
 
@@ -129,13 +130,15 @@ window.formyl = (function () {
   Oneform.prototype.renderSelectDisplay = function () {
     var $el = $(this.el);
     $el
-      .siblings( this.selector.SELECT_DISPLAY )
+      .parents( this.selector.SELECT_WRAP )
+        .find( this.selector.SELECT_DISPLAY )
         .text( $el.find('option:selected').text() );
   };
 
   Oneform.prototype.renderCheckboxDisplay = function () {
     Oneform._updateCheckedState(
       this.el, 
+      this.selector.CHECKER_WRAP,
       this.selector.CHECKBOX_DISPLAY, 
       $(this.el).is(':checked')
     );
@@ -147,11 +150,13 @@ window.formyl = (function () {
    */
   Oneform.prototype.renderRadioDisplay = function () {
     var my_el = this.el,
+    CHECKER_WRAP = this.selector.CHECKER_WRAP,
     RADIO_DISPLAY = this.selector.RADIO_DISPLAY;
 
     $.each( this.brothers, function (i, el) {
       Oneform._updateCheckedState(
         el,
+        CHECKER_WRAP,
         RADIO_DISPLAY,
         my_el === el
       ); 
@@ -164,14 +169,15 @@ window.formyl = (function () {
    * has a side effect
    * @static
    * @param {DOMNode} el
-   * @param {string} selector
+   * @param {string} selector_wrap
+   * @param {string} selector_display
    * @param {boolean} toggleCondition
    */
-  Oneform._updateCheckedState = function (el, selector, toggleCondition) {
+  Oneform._updateCheckedState = function (el, selector_wrap, selector_display, toggleCondition) {
     var $el = $(el);
     $el
-      .parent()
-      .find(selector)
+      .parents(selector_wrap)
+      .find(selector_display)
         .toggleClass( 'checked', toggleCondition );
   };
 
