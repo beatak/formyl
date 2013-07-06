@@ -12,6 +12,10 @@ $shadow_color: rgba(0, 0, 0, 0.1);
 $accent_color: #F00;
 $typeface: 'formyl_symbolsregular';
 
+
+// WRAPPER
+// =======
+
 .oneform-box {
   position: relative;
   display: block;
@@ -30,6 +34,51 @@ $typeface: 'formyl_symbolsregular';
     @include box-shadow( $shadow_color 0 0 0 2px, $shadow_color 0 0 2px 0 inset );
   }
 }
+
+.oneform-checker-wrap {
+}
+
+.oneform-select-wrap {
+}
+
+.oneform-textarea-wrap {
+}
+
+// RAW ELEMENT
+// ===========
+
+.oneform-button {
+}
+
+.oneform-checkbox {
+}
+
+.oneform-radio {
+}
+
+.oneform-select {
+}
+
+.oneform-text {
+}
+
+.oneform-textarea {
+}
+
+// DISPLAY ELEMENT
+// ===============
+
+.oneform-checkbox-display {
+}
+
+.oneform-radio-display {
+}
+
+.oneform-select-display {
+}
+
+
+// ==============================================
 
 .oneform-input {
   display: block;

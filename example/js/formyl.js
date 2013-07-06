@@ -223,16 +223,16 @@ window.formyl = (function () {
       TEXT:             base_selector + '-text',
       TEXTAREA:         base_selector + '-textarea',
 
-      // wrap for input#text, input#button, select and textarea
-      WRAPPER_BOX:      base_selector + '-box',
+      // wrapper elements
+      WRAPPER_BOX:      base_selector + '-box', // text, button, select and textarea
       CHECKER_WRAP:     base_selector + '-checker-wrap', // radio and checkbox
       SELECT_WRAP:      base_selector + '-select-wrap',
       TEXTAREA_WRAP:    base_selector + '-textarea-wrap',
 
       // display objects 
-      SELECT_DISPLAY:   base_selector + '-select-display',
       CHECKBOX_DISPLAY: base_selector + '-checkbox-display',
-      RADIO_DISPLAY:    base_selector + '-radio-display'
+      RADIO_DISPLAY:    base_selector + '-radio-display',
+      SELECT_DISPLAY:   base_selector + '-select-display'
     };
     if (undefined === opt) {
       result = default_object;

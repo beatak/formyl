@@ -20,7 +20,7 @@ li {
   font-style: normal;
 }
 
-/* line 15, ../scss/main.scss */
+/* line 19, ../scss/main.scss */
 .oneform-box {
   position: relative;
   display: block;
@@ -34,20 +34,20 @@ li {
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
   background-color: white;
 }
-/* line 26, ../scss/main.scss */
+/* line 30, ../scss/main.scss */
 .oneform-box:hover {
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
 }
-/* line 29, ../scss/main.scss */
+/* line 33, ../scss/main.scss */
 .oneform-box.on-focus {
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
 }
 
-/* line 34, ../scss/main.scss */
+/* line 83, ../scss/main.scss */
 .oneform-input {
   display: block;
   border-style: none;
@@ -63,12 +63,12 @@ li {
   height: 16px;
 }
 
-/* line 49, ../scss/main.scss */
+/* line 98, ../scss/main.scss */
 .oneform-select-wrap {
   height: 32px;
 }
 
-/* line 53, ../scss/main.scss */
+/* line 102, ../scss/main.scss */
 .oneform-select {
   background: none;
   border-style: none;
@@ -82,7 +82,7 @@ li {
   opacity: 0;
 }
 
-/* line 65, ../scss/main.scss */
+/* line 114, ../scss/main.scss */
 .oneform-select-display {
   color: black;
   display: block;
@@ -92,12 +92,12 @@ li {
   cursor: pointer;
 }
 
-/* line 77, ../scss/main.scss */
+/* line 126, ../scss/main.scss */
 .oneform-textarea-wrap {
   padding: 0;
 }
 
-/* line 81, ../scss/main.scss */
+/* line 130, ../scss/main.scss */
 .oneform-textarea {
   display: block;
   border-style: none;
@@ -112,17 +112,17 @@ li {
   margin: 0;
 }
 
-/* line 95, ../scss/main.scss */
+/* line 144, ../scss/main.scss */
 .oneform-checkbox {
   display: none;
 }
 
-/* line 99, ../scss/main.scss */
+/* line 148, ../scss/main.scss */
 .oneform-radio {
   display: none;
 }
 
-/* line 103, ../scss/main.scss */
+/* line 152, ../scss/main.scss */
 .oneform-checkbox-display {
   position: relative;
   display: inline-block;
@@ -132,18 +132,18 @@ li {
   font-family: "formyl_symbolsregular";
   vertical-align: middle;
 }
-/* line 113, ../scss/main.scss */
+/* line 162, ../scss/main.scss */
 .oneform-checkbox-display:after {
   content: '\2610';
 }
-/* line 118, ../scss/main.scss */
+/* line 167, ../scss/main.scss */
 .oneform-checkbox-display.checked:before {
   content: '\2713';
   color: red;
   position: absolute;
 }
 
-/* line 126, ../scss/main.scss */
+/* line 175, ../scss/main.scss */
 .oneform-radio-display {
   position: relative;
   display: inline-block;
@@ -155,11 +155,11 @@ li {
   background-color: white;
   cursor: pointer;
 }
-/* line 141, ../scss/main.scss */
+/* line 190, ../scss/main.scss */
 .oneform-radio-display:after {
   content: '\25ef';
 }
-/* line 148, ../scss/main.scss */
+/* line 197, ../scss/main.scss */
 .oneform-radio-display.checked:before {
   content: '\25cf';
   color: red;
