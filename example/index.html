@@ -29,7 +29,7 @@
         <div class="small-12 columns"> 
           <label>Zip code</label>
           <div class="oneform-box">
-            <input class="oneform oneform-input" name="zip" type="text" placeholder="90210">
+            <input class="oneform oneform-text" name="zip" type="text" placeholder="90210">
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
         <div class="small-4 columns">
           <label>Birthday</label>
           <div class="oneform-box oneform-select-wrap">
-            <span class="oneform-select-text"></span>
+            <span class="oneform-select-display"></span>
             <select class="oneform-select oneform" name="month">
               <option value="">Month</option>
               <option value="1">January</option>
@@ -60,7 +60,7 @@
         <div class="small-4 columns">
           <label>&nbsp;</label>
           <div class="oneform-box oneform-select-wrap">
-            <span class="oneform-select-text"></span>
+            <span class="oneform-select-display"></span>
             <select class="oneform-select oneform" name="day">
               <option value="">Day</option>
               <option value="1">1</option>
@@ -101,7 +101,7 @@
         <div class="small-4 columns">
           <label>&nbsp;</label>
           <div class="oneform-box oneform-select-wrap">
-            <span class="oneform-select-text"></span>
+            <span class="oneform-select-display"></span>
             <select class="oneform-select oneform" name="year">
               <option value="">Year</option>
               <option value="1995">1995</option>
@@ -135,25 +135,25 @@
       <div class="row">
         <div class="large-12 columns">
           <label>Your essay</label>
-          <div class="oneform-box">
-            <textarea class="oneform-input oneform" name="essay" placeholder="Write whatever you like"></textarea>
+          <div class="oneform-box oneform-textarea-wrap">
+            <textarea class="oneform-textarea oneform" name="essay" placeholder="Write whatever you like"></textarea>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="large-12 columns">
+        <div class="large-6 columns">
           <label>Ethnicity</label>
           <ul>
             <li>
-              <label class="oneform-checkbox-wrap">
+              <label class="oneform-checker-wrap">
                 <input class="oneform oneform-checkbox" name="ethnicity[]" type="checkbox" value="asian">
                 <span class="oneform-checkbox-display"></span>
                 Asian
               </label>
             </li>
             <li>
-              <label class="oneform-checkbox-wrap">
+              <label class="oneform-checker-wrap">
                 <input class="oneform oneform-checkbox" name="ethnicity[]" type="checkbox" value="black">
                 <span class="oneform-checkbox-display"></span>
                 Black
@@ -161,7 +161,7 @@
             </li>
 
             <li>
-              <label class="oneform-checkbox-wrap">
+              <label class="oneform-checker-wrap">
                 <input class="oneform oneform-checkbox" name="ethnicity[]" type="checkbox" value="hispanic-latin">
                 <span class="oneform-checkbox-display"></span>
                 Hispanic / Latin
@@ -169,7 +169,7 @@
             </li>
 
             <li>
-              <label class="oneform-checkbox-wrap">
+              <label class="oneform-checker-wrap">
                 <input class="oneform oneform-checkbox" name="ethnicity[]" type="checkbox" value="indian">
                 <span class="oneform-checkbox-display"></span>
                 Indian
@@ -177,7 +177,7 @@
             </li>
 
             <li>
-              <label class="oneform-checkbox-wrap">
+              <label class="oneform-checker-wrap">
                 <input class="oneform oneform-checkbox" name="ethnicity[]" type="checkbox" value="middle-eastern">
                 <span class="oneform-checkbox-display"></span>
                 Middle Eastern
@@ -185,7 +185,7 @@
             </li>
 
             <li>
-              <label class="oneform-checkbox-wrap">
+              <label class="oneform-checker-wrap">
                 <input class="oneform oneform-checkbox" name="ethnicity[]" type="checkbox" value="native-american">
                 <span class="oneform-checkbox-display"></span>
                 Native American
@@ -193,7 +193,7 @@
             </li>
 
             <li>
-              <label class="oneform-checkbox-wrap">
+              <label class="oneform-checker-wrap">
                 <input class="oneform oneform-checkbox" name="ethnicity[]" type="checkbox" value="pacific-islander">
                 <span class="oneform-checkbox-display"></span>
                 Pacific Islander
@@ -201,7 +201,7 @@
             </li>
 
             <li>
-              <label class="oneform-checkbox-wrap">
+              <label class="oneform-checker-wrap">
                 <input class="oneform oneform-checkbox" name="ethnicity[]" type="checkbox" value="white">
                 <span class="oneform-checkbox-display"></span>
                 White
@@ -209,7 +209,7 @@
             </li>
 
             <li>
-              <label class="oneform-checkbox-wrap">
+              <label class="oneform-checker-wrap">
                 <input checked="checked" class="oneform oneform-checkbox" name="ethnicity[]" type="checkbox" value="multi-racial">
                 <span class="oneform-checkbox-display"></span>
                 Multi-racial
@@ -217,7 +217,7 @@
             </li>
 
             <li>
-              <label class="oneform-checkbox-wrap">
+              <label class="oneform-checker-wrap">
                 <input class="oneform oneform-checkbox" name="ethnicity[]" type="checkbox" value="other">
                 <span class="oneform-checkbox-display"></span>
                 Other
@@ -225,48 +225,147 @@
             </li>
           </ul>
         </div>
+
+        <div class="large-6 columns">
+          <label>Sections</label>
+          <ul>
+            <li>              
+              <div class="oneform-checker-wrap">
+                <span class="oneform-checkbox-display"></span>
+                <input class="oneform oneform-checkbox" name="section[]" type="checkbox" value="places" id="section-places">
+                <label for="section-places">Places</label>
+              </div>
+            </li>
+
+            <li>              
+              <div class="oneform-checker-wrap">
+                <span class="oneform-checkbox-display"></span>
+                <input class="oneform oneform-checkbox" name="section[]" type="checkbox" value="music" id="section-music">
+                <label for="section-music">Music</label>
+              </div>
+            </li>
+
+            <li>              
+              <div class="oneform-checker-wrap">
+                <span class="oneform-checkbox-display"></span>
+                <input class="oneform oneform-checkbox" name="section[]" type="checkbox" value="movies" id="section-movies">
+                <label for="section-movies">Movies</label>
+              </div>
+            </li>
+
+            <li>              
+              <div class="oneform-checker-wrap">
+                <span class="oneform-checkbox-display"></span>
+                <input class="oneform oneform-checkbox" name="section[]" type="checkbox" value="book" id="section-books">
+                <label for="section-books">Books</label>
+              </div>
+            </li>
+
+            <li>              
+              <div class="oneform-checker-wrap">
+                <span class="oneform-checkbox-display"></span>
+                <input class="oneform oneform-checkbox" name="section[]" type="checkbox" value="fitness" id="section-fitness">
+                <label for="section-fitness">fitness</label>
+              </div>
+            </li>
+
+            <li>              
+              <div class="oneform-checker-wrap">
+                <span class="oneform-checkbox-display"></span>
+                <input class="oneform oneform-checkbox" name="section[]" type="checkbox" value="notes" id="section-notes">
+                <label for="section-notes">notes</label>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
       </div>
 
       <div class="row">
-        <div class="large-12 columns">
+        <div class="large-6 columns">
           <label>Flirt</label>
+          <form>
+            <ul>
+              <li>
+                <div class="oneform-checker-wrap">
+                  <input checked="checked" class="oneform oneform-radio" name="key" type="radio" value="how" id="flirts-how">
+                  <span class="oneform-radio-display"></span>
+                  <label for="flirts-how">How are you?</label>
+                </div>
+              </li>
+              <li>
+                <div class="oneform-checker-wrap">
+                  <input class="oneform oneform-radio" name="key" type="radio" value="match" id="flirts-match">
+                  <span class="oneform-radio-display"></span>
+                  <label for="flirts-match">I think we're a good match.</label>
+                </div>
+              </li>
+              <li>
+                <div class="oneform-checker-wrap">
+                  <input class="oneform oneform-radio" name="key" type="radio" value="photo" id="flirts-photo">
+                  <span class="oneform-radio-display"></span>
+                  <label for="flirts-photo">I like your photo.</label>
+                </div>
+              </li>
+              <li>
+                <div class="oneform-checker-wrap">
+                  <input class="oneform oneform-radio" name="key" type="radio" value="send" id="flirts-send">
+                  <span class="oneform-radio-display"></span>
+                  <label for="flirts-send">Send me a message!</label>
+                </div>
+              </li>
+            </ul>
+          </form>
+        </div>
+
+        <div class="large-6 columns">
+          <label>The question is</label>
           <ul>
             <li>
-              <div class="oneform-radio-wrap">
-                <input checked="checked" class="oneform oneform-radio" name="key" type="radio" value="how">
+              <label class="oneform-checker-wrap">
+                <input checked="checked" class="oneform oneform-radio" name="q-rel" type="radio" value="irrelevant">
                 <span class="oneform-radio-display"></span>
-                <label>How are you?</label>
-              </div>
+                Irrelevant
+              </label>
             </li>
             <li>
-              <div class="oneform-radio-wrap">
-                <input class="oneform oneform-radio" name="key" type="radio" value="match">
+              <label class="oneform-checker-wrap">
+                <input class="oneform oneform-radio" name="q-rel" type="radio" value="little">
                 <span class="oneform-radio-display"></span>
-                <label>I think we're a good match.</label>
-              </div>
+                A little important 
+              </label>
             </li>
             <li>
-              <div class="oneform-radio-wrap">
-                <input class="oneform oneform-radio" name="key" type="radio" value="photo">
+              <label class="oneform-checker-wrap">
+                <input class="oneform oneform-radio" name="q-rel" type="radio" value="somewhat">
                 <span class="oneform-radio-display"></span>
-                <label class="">I like your photo.</label>
-              </div>
+                Somewhat important
+              </label>
             </li>
             <li>
-              <div class="oneform-radio-wrap">
-                <input class="oneform oneform-radio" name="key" type="radio" value="send">
+              <label class="oneform-checker-wrap">
+                <input class="oneform oneform-radio" name="q-rel" type="radio" value="very">
                 <span class="oneform-radio-display"></span>
-                <label>Send me a message!</label>
-              </div>
+                Very important
+              </label>
+            </li>
+            <li>
+              <label class="oneform-checker-wrap">
+                <input class="oneform oneform-radio" name="q-rel" type="radio" value="mandatory">
+                <span class="oneform-radio-display"></span>
+                Mandatory
+              </label>
             </li>
           </ul>
         </div>
+
       </div>
 
       <div class="row">
         <div class="small-4 columns">
           <div class="oneform-box">
-            <button class="oneform oneform-input">
+            <button class="oneform oneform-button">
               grumpy
               <img src="https://dujrsrsgsd3nh.cloudfront.net/img/emoticons/grumpycat-1366734534.png" />
             </button>
@@ -274,12 +373,12 @@
         </div>
         <div class="small-4 columns">
           <div class="oneform-box">
-            <input class="oneform oneform-input" name="cancel" type="button" value="cancel" />
+            <input class="oneform oneform-button" name="cancel" type="button" value="cancel" />
           </div>
         </div>
         <div class="small-4 columns">
           <div class="oneform-box">
-            <input class="oneform oneform-input" name="submit" type="submit" value="submit" />
+            <input class="oneform oneform-button" name="submit" type="submit" value="submit" />
           </div>
         </div>
       </div>
