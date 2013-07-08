@@ -1,17 +1,26 @@
 @import 'compass/css3/box-shadow';
 @import 'compass/css3/opacity';
+@import 'compass/css3/border-radius';
 @import 'global';
 @import 'font';
 
+$has_shadow: true;
+
 $spacing: 8px;
 $font_size: 16px;
+$border_width: 1px;
+
 $foreground_color: #000;
 $background_color: #FFF;
 $border_color: #bbb;
 $shadow_color: rgba(0, 0, 0, 0.1);
 $accent_color: #F00;
-$typeface: 'formyl_symbolsregular';
 
+$typeface: 'formyl_symbolsregular';
+$content_checkbox_unchecked: '\2610';
+$content_checkbox_checked: '\2713';
+$content_radio_unchecked: '\25ef';
+$content_radio_checked: '\25cf';
 
 // WRAPPER
 // =======
@@ -22,10 +31,13 @@ $typeface: 'formyl_symbolsregular';
   margin: 0;
   padding: $spacing;
   border-style: solid;
-  border-width: 1px;
+  border-width: $border_width;
   border-color: $border_color;
-  @include single-box-shadow( $shadow_color, 0px, 1px, 2px, false, true );
   background-color: $background_color;
+
+  @if $has_shadow {
+    @include single-box-shadow( $shadow_color, 0px, 1px, 2px, false, true );
+  }
 
   &:hover {
     @include box-shadow( $shadow_color 0 0 0 2px, $shadow_color 0 0 2px 0 inset );
@@ -39,48 +51,18 @@ $typeface: 'formyl_symbolsregular';
 }
 
 .oneform-select-wrap {
+  height: $font_size + ($spacing * 2);
 }
 
 .oneform-textarea-wrap {
+  padding: 0;
 }
 
 // RAW ELEMENT
 // ===========
 
 .oneform-button {
-}
-
-.oneform-checkbox {
-}
-
-.oneform-radio {
-}
-
-.oneform-select {
-}
-
-.oneform-text {
-}
-
-.oneform-textarea {
-}
-
-// DISPLAY ELEMENT
-// ===============
-
-.oneform-checkbox-display {
-}
-
-.oneform-radio-display {
-}
-
-.oneform-select-display {
-}
-
-
-// ==============================================
-
-.oneform-input {
+  position: relative;
   display: block;
   border-style: none;
   background-color: transparent;
@@ -90,13 +72,17 @@ $typeface: 'formyl_symbolsregular';
   width: 100%;
   resize: none;
   line-height: 1.33;
-  padding-top: 0;
-  padding-bottom: 0;
   height: $font_size;
+  margin: 0;
+  padding: 0;
 }
 
-.oneform-select-wrap {
-  height: $font_size + ($spacing * 2);
+.oneform-checkbox {
+  display: none;
+}
+
+.oneform-radio {
+  display: none;
 }
 
 .oneform-select {
@@ -111,20 +97,19 @@ $typeface: 'formyl_symbolsregular';
   @include opacity( 0 );
 }
 
-.oneform-select-display {
-  color: $foreground_color;
+.oneform-text {
   display: block;
+  border-style: none;
+  background-color: transparent;
+  outline: 0 none;
   font-size: $font_size;
+  color: $foreground_color;
+  width: 100%;
+  resize: none;
   line-height: 1.33;
-  padding: 0 0 0 1px;
-  cursor: pointer;
-  // background-image: image-url("phoenix/default/landing/arrow_down.png");
-  // background-repeat: no-repeat;
-  // background-position: right center;
-}
-
-.oneform-textarea-wrap {
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: $font_size;
 }
 
 .oneform-textarea {
@@ -141,13 +126,8 @@ $typeface: 'formyl_symbolsregular';
   margin: 0;
 }
 
-.oneform-checkbox {
-  display: none;
-}
-
-.oneform-radio {
-  display: none;
-}
+// DISPLAY ELEMENT
+// ===============
 
 .oneform-checkbox-display {
   position: relative;
@@ -158,14 +138,15 @@ $typeface: 'formyl_symbolsregular';
   font-family: $typeface;
 
   vertical-align: middle;
+  background-color: $background_color;
 
   &:after {
-    content: '\2610';
+    content: $content_checkbox_unchecked;
   }
 
   &.checked {
     &:before {
-      content: '\2713';
+      content: $content_checkbox_checked;
       color: $accent_color;
       position: absolute;
     }
@@ -182,28 +163,39 @@ $typeface: 'formyl_symbolsregular';
 
   vertical-align: middle;
   background-color: $background_color;
+  @include border-radius( 50% );
 
   cursor: pointer;
-  
 
-  
   &:after {
-    content: '\25ef';
+    content: $content_radio_unchecked;
   }
-
-  // @include border-radius( 7px );
 
   &.checked {
     &:before {
-      // this needs work
-      content: '\25cf';
+      content: $content_radio_checked;
       color: $accent_color;
       position: absolute;
     }
   }
 }
 
+.oneform-select-display {
+  color: $foreground_color;
+  display: block;
+  font-size: $font_size;
+  line-height: 1.33;
+  padding: 0 0 0 1px;
+  cursor: pointer;
 
+  // need arrow down
+  // background-image: image-url("phoenix/default/landing/arrow_down.png");
+  // background-repeat: no-repeat;
+  // background-position: right center;
+}
+
+
+// ==============================================
 
 /*
 
