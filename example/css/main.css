@@ -20,7 +20,7 @@ li {
   font-style: normal;
 }
 
-/* line 28, ../scss/main.scss */
+/* line 32, ../scss/main.scss */
 .oneform-box {
   position: relative;
   display: block;
@@ -34,104 +34,100 @@ li {
   -moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
 }
-/* line 42, ../scss/main.scss */
+/* line 59, ../scss/main.scss */
 .oneform-box:hover {
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
 }
-/* line 45, ../scss/main.scss */
+/* line 62, ../scss/main.scss */
 .oneform-box.on-focus {
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 2px, rgba(0, 0, 0, 0.1) 0 0 2px 0 inset;
 }
 
-/* line 53, ../scss/main.scss */
+/* line 71, ../scss/main.scss */
 .oneform-select-wrap {
   height: 32px;
 }
 
-/* line 57, ../scss/main.scss */
+/* line 75, ../scss/main.scss */
 .oneform-textarea-wrap {
   padding: 0;
 }
 
-/* line 64, ../scss/main.scss */
+/* line 82, ../scss/main.scss */
 .oneform-button {
   position: relative;
   display: block;
-  border-style: none;
-  background-color: transparent;
-  outline: 0 none;
-  font-size: 16px;
-  color: black;
   width: 100%;
-  resize: none;
-  line-height: 1.33;
-  padding-top: 0;
-  padding-bottom: 0;
   height: 16px;
   margin: 0;
   padding: 0;
+  border-style: none;
+  outline-style: none;
+  font-size: 16px;
+  line-height: 1.33;
+  background-color: transparent;
+  color: #333333;
+  resize: none;
 }
 
-/* line 82, ../scss/main.scss */
-.oneform-checkbox {
-  display: none;
-}
-
-/* line 86, ../scss/main.scss */
+/* line 103, ../scss/main.scss */
+.oneform-checkbox,
 .oneform-radio {
   display: none;
 }
 
-/* line 90, ../scss/main.scss */
+/* line 107, ../scss/main.scss */
 .oneform-select {
-  background: none;
-  border-style: none;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+  margin: 0;
+  padding: 0;
+  border-style: none;
+  background: none;
   cursor: pointer;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 
-/* line 102, ../scss/main.scss */
+/* line 124, ../scss/main.scss */
 .oneform-text {
   display: block;
-  border-style: none;
-  background-color: transparent;
-  outline: 0 none;
-  font-size: 16px;
-  color: black;
   width: 100%;
-  resize: none;
-  line-height: 1.33;
+  height: 16px;
   padding-top: 0;
   padding-bottom: 0;
-  height: 16px;
+  border-style: none;
+  outline-style: none;
+  font-size: 16px;
+  line-height: 1.33;
+  background-color: transparent;
+  color: #333333;
+  resize: none;
 }
 
-/* line 117, ../scss/main.scss */
+/* line 143, ../scss/main.scss */
 .oneform-textarea {
   display: block;
-  border-style: none;
-  background-color: transparent;
-  outline: 0 none;
-  font-size: 16px;
-  color: black;
   width: 100%;
-  resize: none;
-  line-height: 1.33;
   padding: 8px;
   margin: 0;
+  border-style: none;
+  outline-style: none;
+  font-size: 16px;
+  line-height: 1.33;
+  background-color: transparent;
+  color: #333333;
+  resize: none;
 }
 
-/* line 134, ../scss/main.scss */
+/* line 164, ../scss/main.scss */
 .oneform-checkbox-display {
   position: relative;
   display: inline-block;
@@ -139,21 +135,24 @@ li {
   height: 16px;
   font-size: 16px;
   font-family: "formyl_symbolsregular";
+  line-height: 1;
   vertical-align: middle;
   background-color: white;
 }
-/* line 145, ../scss/main.scss */
+/* line 181, ../scss/main.scss */
 .oneform-checkbox-display:after {
+  position: absolute;
+  color: #333333;
   content: "\2610";
 }
-/* line 150, ../scss/main.scss */
+/* line 188, ../scss/main.scss */
 .oneform-checkbox-display.checked:before {
-  content: "\2713";
-  color: red;
   position: absolute;
+  color: red;
+  content: "\2713";
 }
 
-/* line 158, ../scss/main.scss */
+/* line 196, ../scss/main.scss */
 .oneform-radio-display {
   position: relative;
   display: inline-block;
@@ -161,33 +160,37 @@ li {
   height: 16px;
   font-size: 16px;
   font-family: "formyl_symbolsregular";
+  line-height: 1;
   vertical-align: middle;
+  cursor: pointer;
   background-color: white;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  cursor: pointer;
 }
-/* line 172, ../scss/main.scss */
+/* line 215, ../scss/main.scss */
 .oneform-radio-display:after {
+  position: absolute;
+  color: #333333;
   content: "\25ef";
 }
-/* line 177, ../scss/main.scss */
+/* line 222, ../scss/main.scss */
 .oneform-radio-display.checked:before {
-  content: "\25cf";
-  color: red;
   position: absolute;
+  color: red;
+  content: "\25cf";
 }
 
-/* line 185, ../scss/main.scss */
+/* line 230, ../scss/main.scss */
 .oneform-select-display {
-  color: black;
   display: block;
+  height: 16px;
+  padding: 0;
   font-size: 16px;
-  line-height: 1.33;
-  padding: 0 0 0 1px;
+  line-height: 1;
+  color: #333333;
   cursor: pointer;
 }
 
