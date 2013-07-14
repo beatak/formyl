@@ -1,23 +1,87 @@
 @import 'compass/css3/box-shadow';
-@import 'compass/css3/opacity';
-@import 'compass/css3/border-radius';
 
-$has_shadow: true !default;
-$has_border: true !default;
-$has_background: true !default;
-$has_focus: true !default;
-$is_border_box: true !default;
+// Compass mixins
+
+$legacy-support-for-ie6: true !default;
+$legacy-support-for-ie7: true !default;
+$legacy-support-for-ie8: true !default;
+$legacy-support-for-ie: $legacy-support-for-ie6 or $legacy-support-for-ie7 or $legacy-support-for-ie8;
+$legacy-support-for-mozilla: true;
+$experimental-support-for-mozilla      : true !default;
+$experimental-support-for-webkit       : true !default;
+$support-for-original-webkit-gradients : true !default;
+$experimental-support-for-opera        : true !default;
+$experimental-support-for-microsoft    : true !default;
+$experimental-support-for-khtml        : false !default;
+$experimental-support-for-svg          : false !default;
+$experimental-support-for-pie          : false !default;
+
+@mixin experimental($property, $value,
+  $moz      : $experimental-support-for-mozilla,
+  $webkit   : $experimental-support-for-webkit,
+  $o        : $experimental-support-for-opera,
+  $ms       : $experimental-support-for-microsoft,
+  $khtml    : $experimental-support-for-khtml,
+  $official : true
+) {
+  @if $webkit  and $experimental-support-for-webkit    { -webkit-#{$property} : $value; }
+  @if $khtml   and $experimental-support-for-khtml     {  -khtml-#{$property} : $value; }
+  @if $moz     and $experimental-support-for-mozilla   {    -moz-#{$property} : $value; }
+  @if $ms      and $experimental-support-for-microsoft {     -ms-#{$property} : $value; }
+  @if $o       and $experimental-support-for-opera     {      -o-#{$property} : $value; }
+  @if $official                                        {         #{$property} : $value; }
+}
+
+@mixin opacity($opacity) {
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 or $legacy-support-for-ie8 {
+    filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+  }
+  opacity: $opacity;
+}
+
+@mixin border-radius($radius: $default-border-radius, $vertical-radius: false) {
+  @if $vertical-radius {
+    @include experimental(border-radius, first-value-of($radius) first-value-of($vertical-radius),
+      not -moz,
+      -webkit,
+      not -o,
+      not -ms,
+      not -khtml,
+      not official
+    );
+    @include experimental("border-radius", $radius unquote("/") $vertical-radius,
+      -moz,
+      not -webkit,
+      not -o,
+      not -ms,
+      -khtml,
+      official
+    );
+  }
+  @else {
+    @include experimental(border-radius, $radius);
+  }
+}
+
+// Formyl mixins
 
 $spacing: 8px !default;
 $font_size: 16px !default;
 $border_width: 1px !default;
 $line_height: 1.33 !default;
+$border_radius: 5px !default;
 
 $foreground_color: #357 !default;
 $background_color: #FFF !default;
 $border_color: #bbb !default;
 $shadow_color: rgba(0, 0, 0, 0.1) !default;
 $accent_color: #F00 !default;
+
+$has_shadow: true !default;
+$has_border: ($border_width > 0px) !default;
+$has_border_radius: ($border_radius > 0px) !default;
+$has_background: true !default;
+$has_focus: true !default;
 
 $typeface: 'formyl_symbolsregular' !default;
 $content_checkbox_unchecked: '\2610' !default;
@@ -46,6 +110,11 @@ $content_small_down_arrow: '\25be' !default;
     @else {
       border-style: none;
     }
+
+    @if $border_radius {
+      @include border-radius( $border_radius );
+    }
+
 
     @if $has_background {
       background-color: $background_color;
