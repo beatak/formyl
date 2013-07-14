@@ -1,0 +1,257 @@
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/opacity';
+@import 'compass/css3/border-radius';
+
+$has_shadow: true !default;
+$has_border: true !default;
+$has_background: true !default;
+$has_focus: true !default;
+$is_border_box: true !default;
+
+$spacing: 8px !default;
+$font_size: 16px !default;
+$border_width: 1px !default;
+$line_height: 1.33 !default;
+
+$foreground_color: #357 !default;
+$background_color: #FFF !default;
+$border_color: #bbb !default;
+$shadow_color: rgba(0, 0, 0, 0.1) !default;
+$accent_color: #F00 !default;
+
+$typeface: 'formyl_symbolsregular' !default;
+$content_checkbox_unchecked: '\2610' !default;
+$content_checkbox_checked: '\2713' !default;
+$content_radio_unchecked: '\25ef' !default;
+$content_radio_checked: '\25cf' !default;
+$content_small_down_arrow: '\25be' !default;
+
+@mixin formyl ( $basename: "oneform" ) {
+
+  // WRAPPER
+  // =======
+
+  .#{$basename}-box {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: $spacing $spacing 0;
+    overflow: hidden;
+
+    @if $has_border {
+      border-style: solid;
+      border-width: $border_width;
+      border-color: $border_color;
+    }
+    @else {
+      border-style: none;
+    }
+
+    @if $has_background {
+      background-color: $background_color;
+    }
+    @else {
+      background-color: transparent;
+    }
+
+    @if $has_shadow {
+      @include single-box-shadow( $shadow_color, 0px, 1px, 2px, false, true );
+    }
+
+    @if $has_focus {
+      &:hover {
+        @include box-shadow( $shadow_color 0 0 0 2px, $shadow_color 0 0 2px 0 inset );
+      }
+      &.on-focus {
+        @include box-shadow( $shadow_color 0 0 0 2px, $shadow_color 0 0 2px 0 inset );
+      }
+    }
+  }
+
+  .#{$basename}-checker-wrap {
+  }
+
+  .#{$basename}-select-wrap {
+    height: $font_size + ($spacing * 2);
+  }
+
+  .#{$basename}-textarea-wrap {
+    padding: 0;
+  }
+
+  // RAW ELEMENT
+  // ===========
+
+  .#{$basename}-button {
+    position: relative;
+    display: block;
+
+    width: 100%;
+    height: $font_size + $spacing;
+    margin: 0;
+    padding: 0 0 $spacing;
+
+    border-style: none;
+    outline-style: none;
+
+    font-size: $font_size;
+    line-height: $line_height;
+
+    background-color: transparent;
+    color: $foreground_color;
+    resize: none;
+
+    &:active {
+      padding-top: 1px;
+    }
+  }
+
+  .#{$basename}-checkbox,
+  .#{$basename}-radio {
+    display: none;
+  }
+
+  .#{$basename}-select {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+
+    border-style: none;
+
+    background: none;
+    cursor: pointer;
+    @include opacity( 0 );
+  }
+
+  .#{$basename}-text {
+    display: block;
+
+    width: 100%;
+    height: $font_size + $spacing;
+    padding: 0 0 $spacing;
+
+    border-style: none;
+    outline-style: none;
+
+    font-size: $font_size;
+    line-height: $line_height;
+
+    background-color: transparent;
+    color: $foreground_color;
+    resize: none;
+  }
+
+  .#{$basename}-textarea {
+    display: block;
+
+    width: 100%;
+    padding: $spacing;
+    margin: 0;
+
+    border-style: none;
+    outline-style: none;
+
+    font-size: $font_size;
+    line-height: $line_height;
+
+    background-color: transparent;
+    color: $foreground_color;
+    resize: none;
+  }
+
+  // DISPLAY ELEMENT
+  // ===============
+
+  .#{$basename}-checkbox-display {
+    position: relative;
+    display: inline-block;
+
+    width: $font_size;
+    height: $font_size;
+
+    font-size: $font_size;
+    font-family: $typeface;
+    line-height: 1;
+
+    vertical-align: middle;
+
+    @if $has_background {
+      background-color: $background_color;
+    }
+
+    &:after {
+      position: absolute;
+      color: $foreground_color;
+      content: $content_checkbox_unchecked;
+    }
+
+    &.checked {
+      &:before {
+        position: absolute;
+        color: $accent_color;
+        content: $content_checkbox_checked;
+      }
+    }
+  }
+
+  .#{$basename}-radio-display {
+    position: relative;
+    display: inline-block;
+
+    width: $font_size;
+    height: $font_size;
+
+    font-size: $font_size;
+    font-family: $typeface;
+    line-height: 1;
+
+    vertical-align: middle;
+    cursor: pointer;
+
+    @if $has_background {
+      background-color: $background_color;
+      @include border-radius( 50% );
+    }
+
+    &:after {
+      position: absolute;
+      color: $foreground_color;
+      content: $content_radio_unchecked;
+    }
+
+    &.checked {
+      &:before {
+        position: absolute;
+        color: $accent_color;
+        content: $content_radio_checked;
+      }
+    }
+  }
+
+  .#{$basename}-select-display {
+    display: block;
+    height: $font_size + $spacing;
+    padding: 0 0 $spacing;
+
+    font-size: $font_size;
+    line-height: 1;
+
+    color: $foreground_color;
+
+    cursor: pointer;
+
+    &:after {
+      position: absolute;
+      top: $spacing;
+      right: $spacing;
+      font-family: $typeface;
+      content: $content_small_down_arrow;
+    }
+  }
+
+};
