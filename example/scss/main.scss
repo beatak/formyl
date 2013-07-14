@@ -8,13 +8,14 @@ $has_shadow: true;
 $has_border: true;
 $has_background: true;
 $has_focus: true;
+$is_border_box: true;
 
 $spacing: 8px;
 $font_size: 16px;
 $border_width: 1px;
 $line_height: 1.33;
 
-$foreground_color: #333;
+$foreground_color: #357;
 $background_color: #FFF;
 $border_color: #bbb;
 $shadow_color: rgba(0, 0, 0, 0.1);
@@ -25,6 +26,7 @@ $content_checkbox_unchecked: '\2610';
 $content_checkbox_checked: '\2713';
 $content_radio_unchecked: '\25ef';
 $content_radio_checked: '\25cf';
+$content_small_down_arrow: '\25be';
 
 // WRAPPER
 // =======
@@ -33,7 +35,8 @@ $content_radio_checked: '\25cf';
   position: relative;
   display: block;
   margin: 0;
-  padding: $spacing;
+  padding: $spacing $spacing 0;
+  overflow: hidden;
 
   @if $has_border {
     border-style: solid;
@@ -84,9 +87,9 @@ $content_radio_checked: '\25cf';
   display: block;
 
   width: 100%;
-  height: $font_size;
+  height: $font_size + $spacing;
   margin: 0;
-  padding: 0;
+  padding: 0 0 $spacing;
 
   border-style: none;
   outline-style: none;
@@ -97,6 +100,10 @@ $content_radio_checked: '\25cf';
   background-color: transparent;
   color: $foreground_color;
   resize: none;
+
+  &:active {
+    padding-top: 1px;
+  }
 }
 
 .oneform-checkbox,
@@ -125,9 +132,8 @@ $content_radio_checked: '\25cf';
   display: block;
 
   width: 100%;
-  height: $font_size;
-  padding-top: 0;
-  padding-bottom: 0;
+  height: $font_size + $spacing;
+  padding: 0 0 $spacing;
 
   border-style: none;
   outline-style: none;
@@ -229,8 +235,8 @@ $content_radio_checked: '\25cf';
 
 .oneform-select-display {
   display: block;
-  height: $font_size;
-  padding: 0;
+  height: $font_size + $spacing;
+  padding: 0 0 $spacing;
 
   font-size: $font_size;
   line-height: 1;
@@ -238,53 +244,13 @@ $content_radio_checked: '\25cf';
   color: $foreground_color;
 
   cursor: pointer;
-  // need arrow down
-  // background-image: image-url("phoenix/default/landing/arrow_down.png");
-  // background-repeat: no-repeat;
-  // background-position: right center;
-}
 
-
-// ==============================================
-
-/*
-
-.oneform-variable-input {
-  padding-right: 20px;
-}
-
-.oneform-bigbutton {
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-  font-size: $font_base;
-  padding: $spacing;
-  background-color: $background_color;
-  color: $fore;
-  border-width: 0;
-  cursor: pointer;
-  text-align: center;
-
-  > input {
-    cursor: pointer;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    height: 100%;
-    width: 100%;
-    color: #FFFFFF;
-    font-size: $base_font_size;
-    text-transform: uppercase;
-    background-color: transparent;
-
-    background-image: image-url('phoenix/default/landing/arrow_right.png');
-    background-repeat: no-repeat;
-    background-position: right center;
-    border: none;
-  }
-
-  &.green {
-    background-color: $green;
+  &:after {
+    position: absolute;
+    top: $spacing;
+    right: $spacing;
+    font-family: $typeface;
+    content: $content_small_down_arrow;
   }
 }
 
-*/
