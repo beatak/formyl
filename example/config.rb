@@ -6,7 +6,7 @@ css_dir = "css"
 sass_dir = "scss"
 #images_dir = "images"
 #javascripts_dir = "javascripts"
-# add_import_path "vendor/foundation/scss"
+add_import_path "../lib/scss"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
